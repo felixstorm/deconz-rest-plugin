@@ -148,7 +148,7 @@ void DeRestPluginPrivate::handleWindowCoveringClusterIndication(const deCONZ::Ap
 
     	NodeValue::UpdateType updateType = NodeValue::UpdateByZclReport;
 
-    	if (attrid == 0x0008) // current CurrentPositionLiftPercentage 0-100
+    	if (attrid == 0x0008 && attrValue <= 100) // current CurrentPositionLiftPercentage 0-100
     	{
             if (lightNode->modelId().startsWith(QLatin1String("lumi.curtain")))
             {
@@ -180,7 +180,7 @@ void DeRestPluginPrivate::handleWindowCoveringClusterIndication(const deCONZ::Ap
     		}
     		lightNode->setZclValue(updateType, WINDOW_COVERING_CLUSTER_ID, 0x0008, numericValue);
     	}
-    	else if (attrid == 0x0009) // current CurrentPositionTiltPercentage 0-100
+    	else if (attrid == 0x0009 && attrValue <= 100) // current CurrentPositionTiltPercentage 0-100
     	{
     		uint8_t sat = attrValue * 255 / 100;
     		numericValue.u8 = sat;
