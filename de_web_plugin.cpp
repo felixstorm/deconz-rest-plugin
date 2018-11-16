@@ -138,6 +138,7 @@ static const SupportedDevice supportedDevices[] = {
     // { VENDOR_115F, "lumi.curtain", jennicMacPrefix}, // Xiaomi curtain controller (router) - exposed only as light
     { VENDOR_UBISYS, "D1", ubisysMacPrefix },
     { VENDOR_UBISYS, "C4", ubisysMacPrefix },
+    { VENDOR_UBISYS, "S1", ubisysMacPrefix },
     { VENDOR_UBISYS, "S2", ubisysMacPrefix },
     { VENDOR_UBISYS, "J1", ubisysMacPrefix },
     { VENDOR_NONE, "Z716A", netvoxMacPrefix },
